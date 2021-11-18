@@ -42,7 +42,7 @@ class blockchain:
         new_proof = 1
         check_proof = False
         while check_proof is False:
-            hash_operation = hashlib.sha256(str(new_proof**2 - previous_proof**3).encode()).hexdigest()
+            hash_operation = make_proof(new_proof, previous_proof)
             if hash_operation[:4] == "0000":
                 check_proof = True
             else:
@@ -52,4 +52,7 @@ class blockchain:
     def hash_of_block(self, block):
         encoded_block = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
+
+    def make_proof(proof_value, previous_proof_value):
+        return hashlib.sha256(str(proof_value**2 - previous_proof_value**3).encode()).hexdigest()
             

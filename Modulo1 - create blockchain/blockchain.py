@@ -103,14 +103,14 @@ class Blockchain:
 # Minig a block of the chain
 
 # Start Flask Webapp
-flash_app = Flask(__name__)
+flask_app = Flask(__name__)
 
 # Init blockchain
 blockchain = Blockchain()
 
 
 
-flash_app.route('/mine_block', methods=['GET'])
+flask_app.route('/mine_block', methods=['GET'])
 def mine_block():
     """
     Mining a new block from a Flask request
@@ -123,3 +123,14 @@ def mine_block():
     response = dict({"message": "!!!!ENHORABUENA, has minado un Nuevo bloque!"},
                     **block)
     return jsonify(response), 200
+
+flask_app.route('get_blockchain', methods=['GET'])
+def get_blockchain():
+    """
+    Get the full blockchain
+    """
+    response = {
+            'blockchain': blockchain.chain,
+            'length': len(blockchain.chain)
+        }
+    return jsonify(response)

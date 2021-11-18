@@ -100,4 +100,10 @@ class Blockchain:
         return True
 
 
+# Minig a block of the chain
 
+# Start Flask Webapp
+flash_app = Flask(__name__)
+
+# Init blockchain
+blockchain = Blockchain()

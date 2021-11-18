@@ -107,3 +107,19 @@ flash_app = Flask(__name__)
 
 # Init blockchain
 blockchain = Blockchain()
+
+
+
+flash_app.route('/mine_block', methods=['GET'])
+def mine_block():
+    """
+    Mining a new block from a Flask request
+    """
+    previous_block = blockchain.get_previous_block()
+    previous_block_proof = previous_block['proof']
+    new_proof = blockchain.proof_of_work(previous_block_proof)
+    previous_block_hash = blockchain.hash_of_block(previous_block)
+    block = blockchain.create_block(new_proof, previous_block_hash)
+    response = dict({"message": "!!!!ENHORABUENA, has minado un Nuevo bloque!"},
+                    **block)
+    return jsonify(response), 200

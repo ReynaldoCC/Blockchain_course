@@ -47,6 +47,13 @@ class Blockchain:
         Return the last block of the block chain
         """
         return self.chain[-1]
+    
+    def make_proof(self, proof_value, previous_proof_value):
+        """
+        Receive the previous valid proof and new try of proof then return a hash
+        made with both proof.
+        """
+        return hashlib.sha256(str(proof_value**2 - previous_proof_value**3).encode()).hexdigest()
 
     def proof_of_work(self, previous_proof):
         """
@@ -56,7 +63,7 @@ class Blockchain:
         new_proof = 1
         check_proof = False
         while check_proof is False:
-            hash_operation = make_proof(new_proof, previous_proof)
+            hash_operation = self.make_proof(new_proof, previous_proof)
             if hash_operation[:4] == "0000":
                 check_proof = True
             else:
@@ -69,13 +76,6 @@ class Blockchain:
         """
         encoded_block = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
-
-    def make_proof(proof_value, previous_proof_value):
-        """
-        Receive the previous valid proof and new try of proof then return a hash
-        made with both proof.
-        """
-        return hashlib.sha256(str(proof_value**2 - previous_proof_value**3).encode()).hexdigest()
 
     def is_chain_valid(self, chain):
         """
@@ -110,7 +110,7 @@ blockchain = Blockchain()
 
 
 
-flask_app.route('/mine_block', methods=['GET'])
+@flask_app.route('/mine_block', methods=['GET'])
 def mine_block():
     """
     Mining a new block from a Flask request
@@ -124,7 +124,7 @@ def mine_block():
                     **block)
     return jsonify(response), 200
 
-flask_app.route('get_blockchain', methods=['GET'])
+@flask_app.route('/get_blockchain', methods=['GET'])
 def get_blockchain():
     """
     Get the full blockchain
@@ -134,3 +134,7 @@ def get_blockchain():
             'length': len(blockchain.chain)
         }
     return jsonify(response)
+
+
+
+flask_app.run(host='0.0.0.0', port=5000)

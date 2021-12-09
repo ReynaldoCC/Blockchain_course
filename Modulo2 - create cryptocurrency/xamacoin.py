@@ -30,6 +30,7 @@ class Blockchain:
         self.chain = []
         self.transactions = []
         self.create_block(proof_of_work = 1, previous_hash = 0)
+        self.nodes = set()
     
     def create_block(self, proof_of_work, previous_hash):
         """
@@ -114,6 +115,13 @@ class Blockchain:
             })
         prev_block = self.get_previous_block()
         return prev_block["index"] + 1
+    
+    def add_node(self, address):
+        """
+        Add node to the blockchain nodes 
+        """
+        parsed_address = urlparse(address)
+        self.nodes.add(parsed_address.netloc)
 
 
 # Minig a block of the chain

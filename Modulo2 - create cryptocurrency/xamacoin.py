@@ -149,6 +149,10 @@ class Blockchain:
 # Start Flask Webapp
 flask_app = Flask(__name__)
 
+
+# Address for the node, unique
+node_address = str(uuid4()).replace('-', '')
+
 # Init blockchain
 blockchain = Blockchain()
 
@@ -163,6 +167,7 @@ def mine_block():
     previous_block_proof = previous_block['proof']
     new_proof = blockchain.proof_of_work(previous_block_proof)
     previous_block_hash = blockchain.hash_of_block(previous_block)
+    blockchain.add_transaction(node_address, "DEtroLL", 12)
     block = blockchain.create_block(new_proof, previous_block_hash)
     response = dict({"message": "!!!!ENHORABUENA, has minado un Nuevo bloque!"},
                     **block)
@@ -191,6 +196,18 @@ def is_valid():
     return jsonify(response)
 
 
+@flask_app.route('/add_transaction', methods=['POST'])
+def add_transaction():
+    json = request.get_json()
+    transaction_keys = ['sender', 'receiver', 'amount']
+    if not all(key in json for key in transaction_keys):
+        return "Error, missing or malformed data", 400
+    
+    index = blockchain.add_transaction(json['sender'], json['reciver'], json['amount'])
+    response = {'message': f'Transaction added, must be appear in block {index}'}
+    return jsonify(response), 201
+
+    
 # Decentralize the blockchain
 
 

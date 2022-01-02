@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "abaef3c9-d780-4364-a8c4-ce684d3937ab",
+		"name": "blockchain_Udemy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Node 5000",
+			"item": [
+				{
+					"name": "Conect node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [ \"http://129.168.192.12:5001\", \n               \"http://129.168.192.12:5002\", \n               \"http://129.168.192.12:5003\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/connect_node",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"connect_node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mine block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/mine_block",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"mine_block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is valid Chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/is_valid",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"is_valid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": \"Kirill\",\n    \"receiver\": \"Hadelin\",\n    \"amount\": 300\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/add_transaction",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"add_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Repalce chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort0}}/replace_chain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort0}}",
+							"path": [
+								"replace_chain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Node 5001",
+			"item": [
+				{
+					"name": "Conect node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [ \"http://129.168.192.12:5001\", \n               \"http://129.168.192.12:5002\", \n               \"http://129.168.192.12:5003\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/connect_node",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"connect_node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mine block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/mine_block",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"mine_block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is valid Chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/is_valid",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"is_valid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": \"Kirill\",\n    \"receiver\": \"Hadelin\",\n    \"amount\": 300\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/add_transaction",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"add_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Repalce chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort1}}/replace_chain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort1}}",
+							"path": [
+								"replace_chain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Node 5002",
+			"item": [
+				{
+					"name": "Conect node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [ \"http://129.168.192.12:5001\", \n               \"http://129.168.192.12:5002\", \n               \"http://129.168.192.12:5003\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/connect_node",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"connect_node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mine block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/mine_block",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"mine_block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is valid Chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/is_valid",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"is_valid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": \"Kirill\",\n    \"receiver\": \"Hadelin\",\n    \"amount\": 300\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/add_transaction",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"add_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Repalce chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort2}}/replace_chain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort2}}",
+							"path": [
+								"replace_chain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Node 5003",
+			"item": [
+				{
+					"name": "Conect node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nodes\": [ \"http://129.168.192.12:5001\", \n               \"http://129.168.192.12:5002\", \n               \"http://129.168.192.12:5003\" ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/connect_node",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"connect_node"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mine block",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/mine_block",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"mine_block"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get blockchain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/get_blockchain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"get_blockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is valid Chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/is_valid",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"is_valid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sender\": \"Kirill\",\n    \"receiver\": \"Hadelin\",\n    \"amount\": 300\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/add_transaction",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"add_transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Repalce chain",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{protocol}}://{{nodeUrl}}:{{nodePort3}}/replace_chain",
+							"protocol": "{{protocol}}",
+							"host": [
+								"{{nodeUrl}}"
+							],
+							"port": "{{nodePort3}}",
+							"path": [
+								"replace_chain"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "nodeUrl",
+			"value": "127.0.0.1"
+		},
+		{
+			"key": "nodePort0",
+			"value": "5000"
+		},
+		{
+			"key": "nodePort1",
+			"value": "5001"
+		},
+		{
+			"key": "nodePort2",
+			"value": "5002"
+		},
+		{
+			"key": "nodePort3",
+			"value": "5003"
+		},
+		{
+			"key": "protocol",
+			"value": "http"
+		}
+	]
+}

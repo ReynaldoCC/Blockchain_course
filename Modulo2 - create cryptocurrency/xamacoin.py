@@ -245,4 +245,20 @@ def connect_node():
         }
     return jsonify(response), 201
 
+# Replace the chain for for the longest chain
+@flask_app.route('/replace_chain', methods=['GET'])
+def replace_chain():
+    if blockchain.replace_chain():
+        response = {
+            'message': "the chain was replaced with the longest chain on the network",
+            'new_chain': blockchain.chain,          
+            }
+    else:
+        response = {
+            'message': "Chain OK all nodes have already have the longest chain",
+            'current_chain': blockchain.chain,          
+            }
+    return jsonify(response), 200
+    
+
 flask_app.run(host='0.0.0.0', port=5000)

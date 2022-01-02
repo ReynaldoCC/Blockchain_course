@@ -190,8 +190,13 @@ def is_valid():
     """
     Verify is the blockchain is valid from Flask and return a boolean with the result
     """
+    if blockchain.is_chain_valid(blockchain.chain):
+        message = 'Te blockchain is valid'
+    else:
+        message = 'Te blockchain is not valid'
     response = {
         'valid': blockchain.is_chain_valid(blockchain.chain),
+        'message': message
         }
     return jsonify(response)
 

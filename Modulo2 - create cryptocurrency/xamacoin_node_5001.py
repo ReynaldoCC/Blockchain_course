@@ -230,7 +230,7 @@ def connect_node():
     Returns a Http Json response with a messages and in success the list of nodes too
     """
     json = request.get_json()
-    nodes = json.get('node')
+    nodes = json.get('nodes')
     message = "There are no nodes to add"
     if nodes is None or len(nodes) == 0:
         return jsonify({'message': message}), 400

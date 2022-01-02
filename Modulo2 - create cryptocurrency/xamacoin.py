@@ -210,6 +210,28 @@ def add_transaction():
     
 # Decentralize the blockchain
 
+# add new nodes
+@flask_app.route('/connect_node', methods=['POST'])
+def connect_node():
+    """
+    Allow to Connect a new node o varios new nodes to the blockchain network
+    
+    Returns a Http Json response with a messages and in success the list of nodes too
+    """
+    json = request.get_json()
+    nodes = json.get('node')
+    message = "There are no nodes to add"
+    if nodes is None or len(nodes) == 0:
+        return jsonify({'message': message}), 400
+    for node in nodes:
+        blockchain.add_node(node)
 
+    message = """added correctly the new nodes to the blockchain, now these are 
+                the members of the blockchain:"""
+    response = {
+            'message': message,
+            'list_of_nodes': list(blockchain.nodes),
+        }
+    return jsonify(response), 201
 
 flask_app.run(host='0.0.0.0', port=5000)

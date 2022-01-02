@@ -198,6 +198,12 @@ def is_valid():
 
 @flask_app.route('/add_transaction', methods=['POST'])
 def add_transaction():
+    """
+    Add a transaction to the pool of transactions
+
+    Returns Http Json response with message of success added transaction
+
+    """
     json = request.get_json()
     transaction_keys = ['sender', 'receiver', 'amount']
     if not all(key in json for key in transaction_keys):

@@ -214,7 +214,7 @@ def add_transaction():
     if not all(key in json for key in transaction_keys):
         return "Error, missing or malformed data", 400
     
-    index = blockchain.add_transaction(json['sender'], json['reciver'], json['amount'])
+    index = blockchain.add_transaction(json['sender'], json['receiver'], json['amount'])
     response = {'message': f'Transaction added, must be appear in block {index}'}
     return jsonify(response), 201
 
